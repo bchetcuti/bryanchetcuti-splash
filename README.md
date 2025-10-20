@@ -20,12 +20,12 @@ Designed to be elegant, extendable, and fast, reflecting the principles of simpl
 ---
 
 ## 🚀 Structure
-/assets → icons, SVGs, preview images
-/pages → static subpages (e.g. /about)
-/style.css → core site styles
-/script.js → routing logic
-/index.html → entry point
-/manifest.json → PWA metadata
+- /assets → icons, SVGs, preview images
+- /pages → static subpages (e.g. /about)
+- /style.css → core site styles
+- /script.js → routing logic
+- /index.html → entry point
+- /manifest.json → PWA metadata
 
 🪶 License
 MIT © Bryan Chetcuti
