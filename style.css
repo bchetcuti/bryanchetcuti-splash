@@ -319,3 +319,14 @@ footer p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.subtle-link {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+.subtle-link:hover {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}

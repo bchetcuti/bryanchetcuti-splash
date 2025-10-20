@@ -1,0 +1,25 @@
+# Privacy Statement — bryanchetcuti.com
+# Last updated: 20 October 2025
+
+Policy: https://bryanchetcuti.com/colophon
+
+This website and its subdomains operate with a privacy-by-design approach.
+
+Data Collection:
+- No cookies, trackers, analytics scripts, or pixels are used.
+- No personally identifiable information is collected, stored, or shared.
+- Standard web server access logs are anonymised and retained briefly for operational integrity only.
+
+Third-Party Services:
+- Static hosting provided by Cloudflare Pages (Australia/EU edge network).
+- DNS, caching, and TLS managed by Cloudflare.
+- Fonts loaded from Google Fonts (Space Grotesk and Inter).
+- Linked sites (LucidSeal, ThreatScope Check, The Vigo Group) operate their own independent privacy policies.
+
+Your Rights:
+- No data is held that requires access, deletion, or correction requests.
+- If you contact me directly, your information will only be used for that correspondence.
+
+Commitment:
+- Privacy is treated as a design principle, not an afterthought.
+- The full digital trust and governance statement is available at: https://bryanchetcuti.com/colophon

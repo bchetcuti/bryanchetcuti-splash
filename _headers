@@ -1,0 +1,58 @@
+/*
+  Security & Privacy Headers — bryanchetcuti.com + sessions.bryanchetcuti.com
+  Context: static PWA + media archive + trusted ecosystem (LucidSeal, ThreatScope Check)
+*/
+
+/* === Base Security === */
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: camera=(), microphone=(), geolocation=()
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+/* === Caching & PWA === */
+Cache-Control: public, max-age=31536000, immutable
+Service-Worker-Allowed: /
+
+/* === Content Security Policy (Main Site) === */
+Content-Security-Policy:
+  default-src 'self';
+  script-src 'self';
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com;
+  img-src 'self' data: https://lucidseal.org https://threatscopecheck.com;
+  connect-src 'self' https://lucidseal.org https://threatscopecheck.com;
+  manifest-src 'self';
+  frame-src https://sessions.bryanchetcuti.com;
+  object-src 'none';
+  base-uri 'self';
+  frame-ancestors 'none';
+  upgrade-insecure-requests;
+
+/* === Cross-Origin Protection === */
+Cross-Origin-Resource-Policy: same-site
+Cross-Origin-Embedder-Policy: require-corp
+Cross-Origin-Opener-Policy: same-origin
+X-Permitted-Cross-Domain-Policies: none
+
+/* === Meta Reporting (optional) === */
+Report-To: {"group":"default","max_age":10886400,"endpoints":[{"url":"https://bryanchetcuti.report-uri.com/a/d/g"}]}
+NEL: {"report_to":"default","max_age":10886400,"failure_fraction":0.01}
+
+
+/* === Sessions Subdomain (media + embeds) === */
+https://sessions.bryanchetcuti.com/*
+  Content-Security-Policy:
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data: blob: https://lucidseal.org https://threatscopecheck.com;
+    media-src 'self' blob: https:;
+    connect-src 'self' https: https://lucidseal.org https://threatscopecheck.com;
+    frame-src https://www.youtube.com https://player.vimeo.com https://open.spotify.com;
+    object-src 'none';
+    base-uri 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
