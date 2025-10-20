@@ -1,0 +1,12 @@
+{
+  "name": "Bryan Chetcuti",
+  "short_name": "BC",
+  "description": "Technology. Trust. Simplicity.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f1f4f7",
+  "theme_color": "#14161a",
+  "icons": [
+    {"src": "/assets/bc-mark.svg","sizes": "any","type": "image/svg+xml"}
+  ]
+}

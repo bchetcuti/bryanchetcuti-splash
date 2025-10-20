@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bryan Chetcuti | Technology, Trust & Transformation</title>
+  <!-- Primary Meta -->
+  <meta name="description" content="Bryan Chetcuti — technology leader focused on digital trust, delivery, and transformation. Exploring the intersection of technology, governance, and purpose." />
+  <meta name="keywords" content="Bryan Chetcuti, technology, digital trust, governance, security, delivery, transformation, Australia, Beyond Blue, LucidSeal, ThreatScope Check, The Vigo Group" />
+  <meta name="author" content="Bryan Chetcuti" />
+  <meta name="theme-color" content="#14161a" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bryanchetcuti.com/" />
+  <meta property="og:title" content="Bryan Chetcuti | Technology, Trust & Transformation" />
+  <meta property="og:description" content="Technology leader focused on digital trust, governance, and purposeful innovation." />
+  <meta property="og:image" content="https://bryanchetcuti.com/assets/social-preview.jpg" />
+  <meta property="og:image:alt" content="Bryan Chetcuti — Technology, Trust & Transformation" />
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bryan Chetcuti | Technology, Trust & Transformation" />
+  <meta name="twitter:description" content="Technology leader focused on digital trust, governance, and purposeful innovation." />
+  <meta name="twitter:image" content="https://bryanchetcuti.com/assets/social-preview.jpg" />
+  <!-- Favicon & PWA -->
+  <link rel="icon" type="image/svg+xml" href="/assets/bc-mark.svg" />
+  <link rel="manifest" href="/manifest.json" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="/style.css" />
+  <!-- Canonical & Robots -->
+  <link rel="canonical" href="https://bryanchetcuti.com/" />
+  <meta name="robots" content="index, follow" />
+</head>
+<body>
+  <main id="app">
+    <section class="splash fade-in">
+      <img src="/assets/bc-mark.svg" alt="Bryan Chetcuti monogram" class="logo" />
+      <h1>Bryan Chetcuti</h1>
+      <p class="tagline">Technology. Trust. Transformation.</p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Bryan Chetcuti</p>
+    <!-- Internal links -->
+    <nav class="footer-links internal">
+      <!-- <a href="https://sessions.bryanchetcuti.com" target="_blank">Sessions Archive</a> -->
+      <a href="/about" data-link>About</a>
+    </nav>
+    <div class="connected">
+      <div class="divider-arc"></div>
+      <span class="footer-label">Connected Work</span>
+      <div class="connected-grid">
+        <a href="https://beyondblue.org.au" class="brand beyondblue">
+          <span class="brand-icon"></span>
+          <span>Beyond Blue</span>
+        </a>
+        <a href="https://lucidseal.org" class="brand lucidseal">
+          <span class="brand-icon"></span>
+          <span>LucidSeal</span>
+        </a>
+        <a href="https://threatscopecheck.com" class="brand threatscope">
+          <span class="brand-icon"></span>
+          <span>ThreatScope<br> Check</span>
+        </a>
+      </div>
+    </div>
+    <!-- Social icons -->
+    <div class="social">
+      <a href="https://www.linkedin.com/in/bryanchetcuti" aria-label="LinkedIn" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+      </a>
+      <a href="https://github.com/bchetcuti" aria-label="GitHub" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 19c-4.97 1.5-4.97-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77 5.44 5.44 0 0 0 3.5 8.5c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+  <script>
+    const routes = {'/': '/index.html','/about': '/pages/about.html'};
+    const notFoundHTML = `<section class="notfound fade-in"><h2>404 — Not Found</h2><p>That page doesn’t exist, or not yet.</p><a href="/" data-link class="back-link">← Back Home</a></section>`;
+
+    document.addEventListener('click', e => {
+      const link = e.target.closest('[data-link]'); if (!link) return;
+      e.preventDefault();
+      const path = new URL(link.href).pathname;
+      history.pushState({}, '', path);
+      loadPage(path); window.scrollTo(0, 0);
+    });
+
+    async function loadPage(path) {
+  // prevent reloading the root HTML
+  if (path === '/' || path === '/index.html') {
+    document.querySelector('#app').innerHTML = `
+      <section class="splash fade-in">
+        <img src="/assets/bc-mark.svg" alt="Bryan Chetcuti monogram" class="logo" />
+        <h1>Bryan Chetcuti</h1>
+        <p class="tagline">Technology. Trust. Simplicity.</p>
+      </section>`;
+    return;
+  }
+
+  const route = routes[path];
+  if (!route) {
+    document.querySelector('#app').innerHTML = notFoundHTML;
+    return;
+  }
+
+  try {
+    const res = await fetch(route);
+    if (!res.ok) throw new Error('Network error');
+    const html = await res.text();
+    document.querySelector('#app').innerHTML = html;
+  } catch {
+    document.querySelector('#app').innerHTML = notFoundHTML;
+  }
+}
+
+   window.addEventListener('popstate',()=>loadPage(location.pathname));
+   if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
+  </script>
+</body>
+</html>
