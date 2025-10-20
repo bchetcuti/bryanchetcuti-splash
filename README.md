@@ -1,6 +1,12 @@
 # Bryan Chetcuti — Splash Site
 
-A minimal, responsive splash page for [bryanchetcuti.com](https://bryanchetcuti.com), serving as a personal digital signature and gateway to connected work.
+[![Deploy to Cloudflare Pages](https://img.shields.io/badge/Deploy-Cloudflare%20Pages-blue?logo=cloudflare&logoColor=white)](https://pages.cloudflare.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/website?url=https%3A%2F%2Fbryanchetcuti.com)](https://bryanchetcuti.com)
+
+
+Minimal personal splash site for [bryanchetcuti.com](https://bryanchetcuti.com) — built with vanilla HTML, CSS, and JS.  
+Designed to be elegant, extendable, and fast, reflecting the principles of simplicity, trust, and transformation.
 
 ---
 
