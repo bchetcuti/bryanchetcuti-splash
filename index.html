@@ -36,6 +36,7 @@
       <img src="/assets/bc-mark.svg" alt="Bryan Chetcuti monogram" class="logo" />
       <h1>Bryan Chetcuti</h1>
       <p class="tagline">Technology. Trust. Transformation.</p>
+
     </section>
   </main>
   <footer>
@@ -78,9 +79,12 @@
         </svg>
       </a>
     </div>
+    <p hidden>
+      <a href="/colophon" data-link rel="nofollow">Colophon</a>
+    </p>    
   </footer>
   <script>
-    const routes = {'/': '/index.html','/about': '/pages/about.html'};
+    const routes = {'/': '/index.html','/about': '/pages/about.html','/colophon': '/pages/colophon.html'};
     const notFoundHTML = `<section class="notfound fade-in"><h2>404 — Not Found</h2><p>That page doesn’t exist, or not yet.</p><a href="/" data-link class="back-link">← Back Home</a></section>`;
 
     document.addEventListener('click', e => {
