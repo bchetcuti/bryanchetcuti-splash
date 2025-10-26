@@ -1,8 +1,6 @@
 /* ==========================================================================
    BRYAN CHETCUTI – Global Stylesheet
    ==========================================================================
-   Purpose: Minimal, responsive layout system for bryanchetcuti.com
-   Combines baseline rhythm, splash grid, connected work footer, and page layout.
    ========================================================================== */
 
 /* === FONT IMPORTS === */
@@ -50,6 +48,13 @@ body {
   min-height: 100vh;
   line-height: 1.6;
 }
+
+main {
+  padding-left: calc(clamp(2rem, 8vw, 3rem) + env(safe-area-inset-left));
+  padding-right: calc(clamp(2rem, 8vw, 3rem) + env(safe-area-inset-right));
+  padding-bottom: calc(3rem + env(safe-area-inset-bottom));
+}
+
 
 img { max-width: 100%; height: auto; display: block; }
 
@@ -366,8 +371,6 @@ footer p {
   background: rgba(0,0,0,0.04);
 }
 
-
-
 /* ==========================================================================
    PAGE (About / Colophon / 404)
    ========================================================================== */
@@ -433,7 +436,7 @@ footer p {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 3rem 1.5rem;
+    padding: 3rem 2.5rem;
   }
 
   .splash, .pathways {
@@ -469,6 +472,11 @@ footer p {
 }
 @media (max-width: 600px) {
   main {
-    padding-inline: clamp(1.5rem, 6vw, 2.5rem);
+    padding-inline: clamp(2rem, 8vw, 3rem);
+  }
+}
+@media (max-width: 600px) {
+  main {
+    padding-top: 4rem;
   }
 }
