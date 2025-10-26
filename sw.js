@@ -1,14 +1,12 @@
-  const CACHE = 'bc-cache-v5';
-  const ASSETS = [
-    '/',
-    '/index.html',
-    '/about',
-    '/pages/about.html',
-    '/colophon',
-    '/pages/colophon.html',
-    '/style.css',
-    '/assets/bc-mark.svg'
-  ];
+const CACHE = 'bc-cache-v6';
+const ASSETS = [
+  '/', 
+  '/index.html',
+  '/style.css',
+  '/assets/bc-mark.svg',
+  '/pages/about.html',
+  '/pages/colophon.html'
+];
 
 self.addEventListener('install', e => {
   e.waitUntil(
@@ -29,16 +27,26 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   e.respondWith(
-    caches.match(e.request).then(cachedResponse => {
-      if (cachedResponse) return cachedResponse;
+    caches.match(e.request).then(cached => {
+      if (cached) return cached;
+
       return fetch(e.request).catch(() => {
-        console.warn('Fallback triggered for:', e.request.url);
+        // Handle offline navigation
         if (e.request.mode === 'navigate') {
+          const url = new URL(e.request.url);
+
+          // Map pretty URLs to cached HTML files
+          if (url.pathname === '/about') return caches.match('/pages/about.html');
+          if (url.pathname === '/colophon') return caches.match('/pages/colophon.html');
+
+          // Generic offline fallback
           return new Response(
-            '<html><body><h2>Offline</h2><p>You appear to be offline. Please try again later.</p></body></html>',
-            { headers: { 'Content-Type': 'text/html' } }
+            `<html><body><h2>Offline</h2><p>You appear to be offline. Please try again later.</p></body></html>`,
+            { headers: { 'Content-Type': 'text/html; charset=utf-8' } }
           );
         }
+
+        // Non-navigation fallback
         return new Response('', { status: 503, statusText: 'Service Unavailable' });
       });
     })
